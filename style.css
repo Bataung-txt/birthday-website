@@ -1,7 +1,7 @@
 body {
     background-image: url("nope.jpeg");
-    background-size: contain;
-    background-position: contain;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     color : rgba(255, 0, 187, 0.571);
     text-align : center;
@@ -189,25 +189,48 @@ transform: scale (1.05);
 }
 @media (max-width: 800px) {
     .birthday-card{
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 40px;
-        padding: 40px 20px;
+        gap: 30px;
+        padding: 30px 20px;
+        align-items: center;
     }
     .photo-background{
-        width: 33.333%;
+        position: absolute;
+        inset: 0;
+        width:100%;
+        height: 100%;
+        display: flex;
+    }
+    .photo-background img {
+        width: 33.33%;
+        height: 100%;
+        object-fit: cover;
     }
     .birthday-title {
         margin-left: 0;
         text-align: center;
+        position: relative;
+        top: auto;
+        z-index: 2;
     }
     .birthday-title h1 {
         font-size: 55px;
     }
     .special-card {
         width: 90%;
-        margin-right: 0;
         padding: 30px;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 90%;
+        max-width: 380px;
+        margin: 0;
+        z-index: 2;
+        box-sizing: border-box;
     }
 }
 .level-container {
