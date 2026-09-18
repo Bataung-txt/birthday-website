@@ -438,3 +438,13 @@ transform: scale (1.05);
 .final-page .birthday-card-final{
     animation: cardReveal 1s ease-out;
 }
+@media screen and (max-width: 800px){
+    .level-card{
+        width :90% !important;
+        max-width :320px !important;
+        flex-shrink : 1 !important;
+    }
+    .level-cards{
+        flex-direction: column !important;
+        align-items : center !important;}}
+        
