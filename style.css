@@ -1,0 +1,402 @@
+body {
+    background-image: url("nope.jpeg");
+    background-size: contain;
+    background-position: contain;
+    background-attachment: fixed;
+    color : rgba(255, 0, 187, 0.571);
+    text-align : center;
+    font-family:'Times New Roman', Times, serif;
+}
+h1 {
+    font-size:80px;
+    margin-top:100px;
+}
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+button {
+    background-color: rgba(225, 107, 154, 0.395);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+button :hover{
+transform: scale (1.05);
+}
+.birthday-card {
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.photo-background {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    z-index: 0;
+}
+.photo-background img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.photo-background ::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+.birthday-title{
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    margin-left: 8%;
+    color: rgba(225, 225, 225, 0.75);
+    text-align: left;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.birthday-title h1 {
+    font-size: clamp(50px, 8vw, 110px);
+    margin: 5px 0;
+    line-height: 0.9;
+    letter-spacing: 5px;
+}
+.special-card{
+    position: absolute;
+    top:45.666%;
+    left: 68.788%;
+    z-index: 2;
+    width: 380px;
+    margin-right: 8%;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+    background-color: rgba(225, 225, 225, 0.025);
+    border: 1px solid rgba(225, 225, 225, 0.04);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.096);
+}
+.special-card h2 {
+    font-size: 30px;
+    margin-top: 0;
+    letter-spacing: 2px;
+}
+.special-card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.game-screen {
+    display: block;
+    width: 75%;
+    margin: 30px;
+    padding: 30px;
+    background: rgba(221, 255, 255, 0.359);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    box-sizing: border-box;
+}
+#wordList{
+    margin: 20px;
+}
+#wordList span{
+    margin: 10px;
+    font-weight: bold;
+}
+#wordList span.found {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+#wordGrid {
+    display: grid;
+    grid-template-columns: repeat(10,40px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 30px
+}
+#mediumwordGrid {
+    display: grid;
+    grid-template-columns: repeat(12,40px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 30px}
+#hardwordGrid {
+    display: grid;
+    grid-template-columns: repeat(15,35px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 30px}
+#hardwordGrid .letter{
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+}
+.letter {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(104, 93, 254, 0.684);
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: grab;
+}
+.letter.selected {
+    background-color: blueviolet;
+    color: white;
+}
+.letter.found-letter {
+    background-color: green;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5)
+}
+.letter {
+    transition: 0.2s ease;
+}
+#levelComplete {
+    display: none;
+    background-color: white;
+    width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+#levelComplete h2 {
+    font-size: 32px;
+}
+#levelComplete p{
+    font-size: 20px;
+}
+@media (max-width: 800px) {
+    .birthday-card{
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+    .photo-background{
+        width: 33.333%;
+    }
+    .birthday-title {
+        margin-left: 0;
+        text-align: center;
+    }
+    .birthday-title h1 {
+        font-size: 55px;
+    }
+    .special-card {
+        width: 90%;
+        margin-right: 0;
+        padding: 30px;
+    }
+}
+.level-container {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    background-image: url("photo.jpeg");
+    background-position: contain;
+    background-size: cover;
+}
+.level-container h1 {
+    margin: 0 0 15px 0;
+}
+.level-container > p {
+    margin: 0 0 30px 0;
+}
+.level-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    width: 100%;
+}
+
+.level-card {
+    width: 220px;
+    min-height: 230px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.311);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.level-card h2 {
+    margin-top: 0;
+}
+
+.level-card p {
+    line-height: 1.5;
+}
+
+.level-card button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.final-page {
+    min-height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("picture.jpeg");
+    background-size: contain;
+    background-position: center;
+    padding: 30px;
+}
+.final-page .birthday-card-final {
+    display: flex;
+    width: 90%;
+    max-width: 900px;
+    min-height: 500px;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.158);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    overflow: hidden;
+}
+.final-page .card-left,
+.final-page .card-right {
+    flex: 1 1 0;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.final-page .card-left {
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.final-page .card-left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 3px;
+    height: 100%;
+    background: rgba(225, 225, 225, 0.025);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+}
+.final-page .card-right {
+    align-items: flex-start;
+    text-align: left;
+}
+.final-page .card-left h1 {
+    color:rgba(217, 255, 255, 0.412)
+}
+.final-page .card-decoration{
+    font-size: 60px;
+}
+.final-page .card-right h2{
+    margin: 0 0 25px 0;
+    font-size: 28px;
+    line-height: 1.3;
+}
+.final-page .card-right p{
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.3;
+}
+.final-page .photo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+.final-page .photo-row img {
+    width: 100px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid rgba(223, 122, 139, 0.808);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+.final-page .photo-row img:nth-child(1) {
+    transform: rotate(-30deg);
+}
+.final-page .photo-row img:nth-child(2) {
+    transform: translateY(-8px);
+}
+.final-page .photo-row img:nth-child(3) {
+    transform: rotate(30deg);
+}
+.final-page .photo-row img:hover {
+    transform: scale(1.08) rotate(0deg);
+}
+.final-page .card-right {
+    color: white;
+}
+.final-page .card-right h2{
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+.final-page .card-right p {
+    font-size: 20px;
+    line-height: 1.7;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateX(80%) translateY(50%) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0) scale(1);
+    }
+}
+.final-page .birthday-card-final{
+    animation: cardReveal 1s ease-out;
+}
