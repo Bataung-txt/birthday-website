@@ -446,5 +446,45 @@ transform: scale (1.05);
     }
     .level-cards{
         flex-direction: column !important;
-        align-items : center !important;}}
+        align-items : center !important;
+    }
+.game-screen {
+    width: 95%
+    margin 20px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+    #wordList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        margin: 15px auto;
+        width: 100%;
+    }
+    #wordList span {
+        margin: 3px;
+    }
+    #wordGrid {
+        grid-template-columns; repeat (10, 30px);
+        gap:3px;
+    }
+     #mediumwordGrid {
+        grid-template-columns; repeat (12, 26px);
+        gap:3px;
+    }
+     #hardwordGrid {
+        grid-template-columns; repeat (15, 20px);
+        gap:2px;
+    }
+    #hardwordGrid .letter {
+        width:20px;
+        height : 20px
+        font-size : 12px;
+    }
+    .letter {
+        width : 20px;
+        height: 20px;
+        font-size: 15px;}
+}
         
