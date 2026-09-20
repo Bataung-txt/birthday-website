@@ -487,4 +487,71 @@ transform: scale (1.05);
         height: 20px;
         font-size: 15px;}
 }
+     .final-page {
+        min-height: 100vh;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    .final-page .birthday-card-final {
+        width: 95%;
+        min-height: auto;
+        flex-direction: column;
+        border-radius: 20px;
+    }
+
+    .final-page .card-left,
+    .final-page .card-right {
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
+    }
+
+    .final-page .card-left {
+        min-height: 350px;
+    }
+
+    .final-page .card-left::after {
+        top: auto;
+        right: 10%;
+        bottom: -1px;
+        width: 80%;
+        height: 3px;
+    }
+
+    .final-page .card-left h1 {
+        font-size: 42px;
+        margin: 10px 0;
+    }
+
+    .final-page .card-decoration {
+        font-size: 45px;
+    }
+
+    .final-page .photo-row {
+        gap: 5px;
+        margin: 15px 0;
+    }
+
+    .final-page .photo-row img {
+        width: 75px;
+        height: 100px;
+    }
+
+    .final-page .card-right {
+        align-items: center;
+        text-align: center;
+    }
+
+    .final-page .card-right h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .final-page .card-right p {
+        font-size: 17px;
+        line-height: 1.6;
+    }
+    
         
