@@ -1,20 +1,24 @@
+```css
 body {
     background-image: url("nope.jpeg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color : rgba(255, 0, 187, 0.571);
-    text-align : center;
-    font-family:'Times New Roman', Times, serif;
+    color: rgba(255, 0, 187, 0.571);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 h1 {
-    font-size:80px;
-    margin-top:100px;
+    font-size: 80px;
+    margin-top: 100px;
 }
+
 p {
     font-size: 20px;
     margin-bottom: 30px;
 }
+
 button {
     background-color: rgba(225, 107, 154, 0.395);
     color: white;
@@ -25,9 +29,16 @@ button {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
-button :hover{
-transform: scale (1.05);
+
+button:hover {
+    transform: scale(1.05);
 }
+
+
+/* =========================================
+   INDEX / BIRTHDAY INTRO PAGE
+   ========================================= */
+
 .birthday-card {
     min-height: 100vh;
     width: 100%;
@@ -40,25 +51,29 @@ transform: scale (1.05);
     box-sizing: border-box;
     overflow: hidden;
 }
+
 .photo-background {
     position: absolute;
     inset: 0;
     display: flex;
     z-index: 0;
 }
+
 .photo-background img {
     width: 33.333%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
-.photo-background ::after{
+
+.photo-background::after {
     content: "";
     position: absolute;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.25);
 }
-.birthday-title{
+
+.birthday-title {
     position: absolute;
     top: 50%;
     z-index: 2;
@@ -67,15 +82,17 @@ transform: scale (1.05);
     text-align: left;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
+
 .birthday-title h1 {
     font-size: clamp(50px, 8vw, 110px);
     margin: 5px 0;
     line-height: 0.9;
     letter-spacing: 5px;
 }
-.special-card{
+
+.special-card {
     position: absolute;
-    top:45.666%;
+    top: 45.666%;
     left: 68.788%;
     z-index: 2;
     width: 380px;
@@ -90,16 +107,24 @@ transform: scale (1.05);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.096);
 }
+
 .special-card h2 {
     font-size: 30px;
     margin-top: 0;
     letter-spacing: 2px;
 }
+
 .special-card p {
     font-size: 18px;
     line-height: 1.6;
     margin-bottom: 30px;
 }
+
+
+/* =========================================
+   GAME SCREEN
+   ========================================= */
+
 .game-screen {
     display: block;
     width: 75%;
@@ -112,41 +137,63 @@ transform: scale (1.05);
     text-align: center;
     box-sizing: border-box;
 }
-#wordList{
+
+#wordList {
     margin: 20px;
 }
-#wordList span{
+
+#wordList span {
     margin: 10px;
     font-weight: bold;
 }
+
 #wordList span.found {
     text-decoration: line-through;
     opacity: 0.5;
 }
+
+
+/* EASY GRID */
+
 #wordGrid {
     display: grid;
-    grid-template-columns: repeat(10,40px);
+    grid-template-columns: repeat(10, 40px);
     gap: 5px;
     justify-content: center;
-    margin-top: 30px
+    margin-top: 30px;
 }
-#mediumwordGrid {
+
+
+/* MEDIUM GRID */
+
+#mediumWordGrid {
     display: grid;
-    grid-template-columns: repeat(12,40px);
+    grid-template-columns: repeat(12, 40px);
     gap: 5px;
     justify-content: center;
-    margin-top: 30px}
-#hardwordGrid {
+    margin-top: 30px;
+}
+
+
+/* HARD GRID */
+
+#hardWordGrid {
     display: grid;
-    grid-template-columns: repeat(15,35px);
+    grid-template-columns: repeat(15, 35px);
     gap: 5px;
     justify-content: center;
-    margin-top: 30px}
-#hardwordGrid .letter{
+    margin-top: 30px;
+}
+
+#hardWordGrid .letter {
     width: 35px;
     height: 35px;
     font-size: 18px;
 }
+
+
+/* LETTERS */
+
 .letter {
     width: 40px;
     height: 40px;
@@ -158,20 +205,24 @@ transform: scale (1.05);
     font-size: 20px;
     font-weight: bold;
     cursor: grab;
+    transition: 0.2s ease;
 }
+
 .letter.selected {
     background-color: blueviolet;
     color: white;
 }
+
 .letter.found-letter {
     background-color: green;
     color: white;
     transform: scale(1.05);
-    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5)
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5);
 }
-.letter {
-    transition: 0.2s ease;
-}
+
+
+/* LEVEL COMPLETE */
+
 #levelComplete {
     display: none;
     background-color: white;
@@ -181,73 +232,20 @@ transform: scale (1.05);
     border-radius: 25px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
+
 #levelComplete h2 {
     font-size: 32px;
 }
-#levelComplete p{
+
+#levelComplete p {
     font-size: 20px;
 }
-@media (max-width: 800px) {
-    .birthday-card{
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 30px;
-        padding: 30px 20px;
-        align-items: center;
-    }
-    .photo-background{
-        position: absolute;
-        inset: 0;
-        width:100%;
-        height: 100%;
-        display: flex;
-    }
-    .photo-background img {
-        width: 33.33%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .birthday-title {
-        margin-left: 0;
-        text-align: center;
-        position: relative;
-        top: auto;
-        z-index: 2;
-    }
-    .birthday-title h1 {
-        font-size: 55px;
-    }
-    .special-card {
-        width: 90%;
-        padding: 30px;
-        position: relative;
-        top: auto;
-        left: auto;
-        width: 90%;
-        max-width: 380px;
-        margin: 0;
-        z-index: 2;
-        box-sizing: border-box;
-    }
-    .level-container {
-        min-height: 100vh;
-        padding: 30px 20px;
-        box-sizing: border-box;
-    }
-    .level-cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .level-card {
-        width:90%;
-        max-width:320px;
-        min-height: 200px;
-        flex-shrink: 1;
-}
+
+
+/* =========================================
+   LEVEL SELECTION PAGE
+   ========================================= */
+
 .level-container {
     min-height: 100vh;
     width: 100%;
@@ -259,15 +257,18 @@ transform: scale (1.05);
     text-align: center;
     padding: 30px;
     background-image: url("photo.jpeg");
-    background-position: contain;
+    background-position: center;
     background-size: cover;
 }
+
 .level-container h1 {
     margin: 0 0 15px 0;
 }
+
 .level-container > p {
     margin: 0 0 30px 0;
 }
+
 .level-cards {
     display: flex;
     flex-direction: row;
@@ -290,15 +291,14 @@ transform: scale (1.05);
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .level-card:hover {
     transform: translateY(-10px);
-
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .level-card h2 {
@@ -316,9 +316,15 @@ transform: scale (1.05);
     cursor: pointer;
     font-size: 16px;
 }
+
+
+/* =========================================
+   FINAL PAGE
+   ========================================= */
+
 .final-page {
     min-height: 100vh;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-image: url("picture.jpeg");
@@ -326,6 +332,7 @@ transform: scale (1.05);
     background-position: center;
     padding: 30px;
 }
+
 .final-page .birthday-card-final {
     display: flex;
     width: 90%;
@@ -340,6 +347,7 @@ transform: scale (1.05);
     border-radius: 25px;
     overflow: hidden;
 }
+
 .final-page .card-left,
 .final-page .card-right {
     flex: 1 1 0;
@@ -349,13 +357,14 @@ transform: scale (1.05);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
 }
+
 .final-page .card-left {
     align-items: center;
     text-align: center;
     position: relative;
 }
+
 .final-page .card-left::after {
     content: "";
     position: absolute;
@@ -366,26 +375,35 @@ transform: scale (1.05);
     background: rgba(225, 225, 225, 0.025);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
 }
+
 .final-page .card-right {
     align-items: flex-start;
     text-align: left;
+    color: white;
 }
+
 .final-page .card-left h1 {
-    color:rgba(217, 255, 255, 0.412)
+    color: rgba(217, 255, 255, 0.412);
 }
-.final-page .card-decoration{
+
+.final-page .card-decoration {
     font-size: 60px;
 }
-.final-page .card-right h2{
+
+.final-page .card-right h2 {
     margin: 0 0 25px 0;
     font-size: 28px;
     line-height: 1.3;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
-.final-page .card-right p{
+
+.final-page .card-right p {
     margin: 0;
-    font-size: 28px;
-    line-height: 1.3;
+    font-size: 20px;
+    line-height: 1.7;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
+
 .final-page .photo-row {
     display: flex;
     justify-content: center;
@@ -393,6 +411,7 @@ transform: scale (1.05);
     gap: 10px;
     margin: 20px 0;
 }
+
 .final-page .photo-row img {
     width: 100px;
     height: 130px;
@@ -402,59 +421,135 @@ transform: scale (1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
 }
+
 .final-page .photo-row img:nth-child(1) {
     transform: rotate(-30deg);
 }
+
 .final-page .photo-row img:nth-child(2) {
     transform: translateY(-8px);
 }
+
 .final-page .photo-row img:nth-child(3) {
     transform: rotate(30deg);
 }
+
 .final-page .photo-row img:hover {
     transform: scale(1.08) rotate(0deg);
 }
-.final-page .card-right {
-    color: white;
-}
-.final-page .card-right h2{
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-.final-page .card-right p {
-    font-size: 20px;
-    line-height: 1.7;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-}
+
+
+/* =========================================
+   CARD REVEAL ANIMATION
+   ========================================= */
+
 @keyframes cardReveal {
+
     from {
         opacity: 0;
         transform: translateX(80%) translateY(50%) scale(0.5);
     }
+
     to {
         opacity: 1;
         transform: translateX(0) translateY(0) scale(1);
     }
 }
-.final-page .birthday-card-final{
+
+.final-page .birthday-card-final {
     animation: cardReveal 1s ease-out;
 }
+
+
+/* =========================================
+   MOBILE RESPONSIVE STYLES
+   ========================================= */
+
 @media screen and (max-width: 800px) {
 
-    /* LEVELS PAGE */
+    /* -----------------------------------------
+       INDEX PAGE
+       ----------------------------------------- */
 
-    .level-card {
-        width: 90% !important;
-        max-width: 320px !important;
-        flex-shrink: 1 !important;
+    .birthday-card {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px 20px;
+        align-items: center;
+    }
+
+    .photo-background {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+
+    .photo-background img {
+        width: 33.33%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .birthday-title {
+        margin-left: 0;
+        text-align: center;
+        position: relative;
+        top: auto;
+        z-index: 2;
+    }
+
+    .birthday-title h1 {
+        font-size: 55px;
+    }
+
+    .special-card {
+        width: 90%;
+        max-width: 380px;
+        padding: 30px;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0;
+        z-index: 2;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------
+       LEVELS PAGE
+       ----------------------------------------- */
+
+    .level-container {
+        min-height: 100vh;
+        width: 100%;
+        padding: 30px 20px;
+        box-sizing: border-box;
     }
 
     .level-cards {
-        flex-direction: column !important;
-        align-items: center !important;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .level-card {
+        width: 90%;
+        max-width: 320px;
+        min-height: 200px;
+        flex-shrink: 1;
     }
 
 
-    /* GAME PAGES */
+    /* -----------------------------------------
+       GAME PAGES
+       ----------------------------------------- */
 
     .game-screen {
         width: 95%;
@@ -481,17 +576,17 @@ transform: scale (1.05);
         gap: 3px;
     }
 
-    #mediumwordGrid {
+    #mediumWordGrid {
         grid-template-columns: repeat(12, 26px);
         gap: 3px;
     }
 
-    #hardwordGrid {
+    #hardWordGrid {
         grid-template-columns: repeat(15, 20px);
         gap: 2px;
     }
 
-    #hardwordGrid .letter {
+    #hardWordGrid .letter {
         width: 20px;
         height: 20px;
         font-size: 12px;
@@ -504,7 +599,9 @@ transform: scale (1.05);
     }
 
 
-    /* FINAL PAGE */
+    /* -----------------------------------------
+       FINAL PAGE
+       ----------------------------------------- */
 
     .final-page {
         min-height: 100vh;
@@ -573,3 +670,4 @@ transform: scale (1.05);
         line-height: 1.6;
     }
 }
+
